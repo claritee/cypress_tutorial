@@ -43,10 +43,17 @@ npx sequelize db:seed:undo:all --debug
 
 ```
 curl http://localhost:3000/api/authors
+curl http://localhost:3000/api/books
 ```
 
 ### Example view
 
 ```
 curl http://localhost:3000/
+```
+
+To view all books
+
+```
+curl http://localhost:3000/books
 ```

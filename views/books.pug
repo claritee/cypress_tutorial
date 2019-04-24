@@ -1,0 +1,17 @@
+html
+  head
+    title= title
+
+    style.
+      body { font-family: arial }
+      li { display: table; padding: 10px; min-width: 300px }
+      li:nth-child(odd) { background-color: #eee }
+      span.title { font-weight: bold }
+      span.author { font-style: italic }
+  body
+    h1 Books
+    ul
+      each book in books
+        li.book
+          span.title= book.get('title')
+          span.author &nbsp; #{book.get('author').get('first_name')} #{book.get('author').get('last_name')}
