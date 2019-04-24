@@ -44,3 +44,9 @@ npx sequelize db:seed:undo:all --debug
 ```
 curl http://localhost:3000/api/authors
 ```
+
+### Example view
+
+```
+curl http://localhost:3000/
+```
