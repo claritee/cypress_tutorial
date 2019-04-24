@@ -1,5 +1,6 @@
-const Sequelize = require('sequelize')
-const AuthorModel = require('./models/author')
+const Sequelize = require('sequelize');
+const AuthorModel = require('./models/author');
+const BookModel = require('./models/book');
 
 const sequelize = new Sequelize('books', 'dev', 'password', {
   host: 'localhost',
@@ -14,6 +15,10 @@ const sequelize = new Sequelize('books', 'dev', 'password', {
 });
 
 const Author = AuthorModel(sequelize, Sequelize);
+const Book = BookModel(sequelize, Sequelize);
+
+Author.hasMany(Book);
+Book.belongsTo(Author, { foreignKey: 'author_id' });
 
 sequelize.sync({ force: true })
   .then(() => {
@@ -22,4 +27,5 @@ sequelize.sync({ force: true })
 
 module.exports = {
   Author,
+  Book
 };

@@ -6,6 +6,7 @@ module.exports = (sequelize, type) => {
       autoIncrement: true
     },
     first_name: type.STRING,
-    last_name: type.STRING
+    last_name: type.STRING,
+    timestamps: true
   })
 }
