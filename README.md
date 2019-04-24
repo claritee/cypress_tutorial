@@ -6,6 +6,7 @@ This tutorial was written for a Women Who Code Sydney workshop on Cypress
 
 * Node
 * Yarn
+* NPX
 
 ## Running
 
@@ -17,9 +18,26 @@ yarn install
 
 ### Run the app
 
+This will run the app and create the database
+
 ```
 node index.js
 ```
+
+### Run DB Migrations
+
+To run (all):
+
+```
+npx sequelize db:seed:all --debug
+```
+
+To undo (all):
+
+```
+npx sequelize db:seed:undo:all --debug
+```
+
 
 ### Example API request
 

@@ -20,7 +20,7 @@ const Book = BookModel(sequelize, Sequelize);
 Author.hasMany(Book);
 Book.belongsTo(Author, { foreignKey: 'author_id' });
 
-sequelize.sync({ force: true })
+sequelize.sync()
   .then(() => {
   console.log(`Database & tables created!`)
 });

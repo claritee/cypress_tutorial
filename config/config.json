@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "dev",
+    "password": "password",
+    "database": "books",
+    "host": "localhost",
+    "dialect": "sqlite",
+    "storage": "../store.sqlite"
+  }
+}
