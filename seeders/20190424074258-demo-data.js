@@ -1,31 +1,47 @@
 'use strict';
 
-const { Author } = require('../sequelize');
+const { Author, Book } = require('../sequelize');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    // return Author.create({
-    //   first_name: "Sheryl",
-    //   last_name: "Sandberg"
-    // });
-    return Author.bulkCreate([
-      {
-        first_name: "Jane",
-        last_name: "Austen"
-      },
-      {
-        first_name: "J.K.",
-        last_name: "Rowling"
-      },
-      {
-        first_name: "Malcolm",
-        last_name: "Gladwell"
-      }
-    ]);
+    Author.create({
+      first_name: "Dan",
+      last_name: "Pink"
+    }).then((author) => {
+      return Book.create({
+        title: "Drive",
+        author_id: author.id
+      });
+    });
+    
+    Author.create({
+      first_name: "Sheryl",
+      last_name: "Sandberg"
+    }).then((author) => {
+      return Book.create({
+        title: "Lean In",
+        author_id: author.id
+      });
+    });
+    
+    return Author.create({
+      first_name: "Malcolm",
+      last_name: "Gladwell"
+    }).then((author) => {
+      return Book.create({
+        title: "Outliers",
+        author_id: author.id
+      });
+    });
   },
 
   down: (queryInterface, Sequelize) => {
-    return Author.destroy({
+    Author.destroy({
+      where: {},
+      truncate: true
+    });
+
+    return Book.destroy({
       where: {},
       truncate: true
     });
