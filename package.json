@@ -3,6 +3,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.7.4"
+    "sequelize": "^5.7.4",
+    "sqlite3": "^4.0.6"
   }
 }
