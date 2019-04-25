@@ -3,5 +3,5 @@ describe('End to End Tests', function() {
     cy.visit('/login', { timeout: 5000 });
     cy.get('[data-cy=login]').click({ position: 'topLeft' });
     cy.get('li.book').should('have.length', 3);
-  })
-})
+  });
+});
