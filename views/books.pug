@@ -3,15 +3,18 @@ html
     title= title
 
     style.
-      body { font-family: arial }
-      li { display: table; padding: 10px; min-width: 300px }
+      body { font-family: arial; font-size: 11pt; background-color: #f6f5f6 }
+      h1 { margin-left: 40px; }
+      div.main { background-color: #fff; padding: 20px; width: 500px; margin-left: 30%; border: solid 1px #eee}
+      li { display: table; padding: 10px; min-width: 85% }
       li:nth-child(odd) { background-color: #eee }
       span.title { font-weight: bold }
       span.author { font-style: italic }
   body
-    h1 Books
-    ul
-      each book in books
-        li.book
-          span.title= book.get('title')
-          span.author &nbsp; #{book.get('author').get('first_name')} #{book.get('author').get('last_name')}
+    div.main
+      h1 Books
+      ul
+        each book in books
+          li.book
+            span.title= book.get('title')
+            span.author &nbsp; #{book.get('author').get('first_name')} #{book.get('author').get('last_name')}

@@ -24,6 +24,10 @@ app.get('/login', function (req, res) {
   res.render('login', { title: 'Login', message: 'Click to login' })
 });
 
+app.post('/login', function (req, res) {
+  res.redirect('/books');
+});
+
 app.get('/books', function (req, res) {
   Book.findAll({
     include: [{ all: true }]
