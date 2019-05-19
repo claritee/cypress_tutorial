@@ -10,7 +10,7 @@ describe('API Tests', function() {
       .request(Cypress.env('host') + '/api/books', { timeout: 5000 })
       .then((response) => {
         expect(response.status).to.eq(200);
-        expect(response.body).to.have.length(3);
+        expect(response.body).to.have.length(4);
       });
   });
 });
