@@ -1,8 +1,7 @@
 describe('API Tests', function() {
   beforeEach(() => {
     console.log('before all');
-    cy.exec('npx sequelize db:seed:undo --seed 20190506113929-e2e-data.js');
-    cy.exec('npx sequelize db:seed --seed 20190506113929-e2e-data.js');
+    cy.task('e2e-seed-db', null, { timeout: 20000 });
   });
 
   it('books api', function() {
