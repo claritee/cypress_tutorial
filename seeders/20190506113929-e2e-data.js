@@ -25,11 +25,14 @@ module.exports = {
         title: 'The Wife Drought'
       }
     }).then((book) => {
-      return Book.destroy({
-        where: {
-          id: book.id
-        }
-      });
+      if (book) {
+        return Book.destroy({
+          where: {
+            id: book.id
+          }
+        });
+      }
+      return true;
     });
 
     return Author.findOne({
@@ -38,11 +41,14 @@ module.exports = {
         last_name: 'Crabb'
       }
     }).then((author) => {
-      return Author.destroy({
-        where: {
-          id: author.id
-        }
-      });
+      if (author) {
+        return Author.destroy({
+          where: {
+            id: author.id
+          }
+        });
+      }
+      return true;
     });
   }
 };
