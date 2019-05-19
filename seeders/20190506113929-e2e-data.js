@@ -10,24 +10,39 @@ module.exports = {
           last_name: 'Crabb'
         }
       }).then(([author, created]) => {
-      return Book.findOrCreate({
-        where: {
-          title: 'The Wife Drought',
-          author_id: author.id
-        }
-      });
+        return Book.findOrCreate({
+          where: {
+            title: 'The Wife Drought',
+            author_id: author.id
+          }
+        });
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    Author.destroy({
-      where: { first_name: 'Annabel', last_name: 'Crabb' },
-      truncate: true
+    Book.findOne({
+      where: {
+        title: 'The Wife Drought'
+      }
+    }).then((book) => {
+      return Book.destroy({
+        where: {
+          id: book.id
+        }
+      });
     });
 
-    return Book.destroy({
-      where: { title: 'The Wife Drought' },
-      truncate: true
+    return Author.findOne({
+      where: {
+        first_name: 'Annabel',
+        last_name: 'Crabb'
+      }
+    }).then((author) => {
+      return Author.destroy({
+        where: {
+          id: author.id
+        }
+      });
     });
   }
 };
