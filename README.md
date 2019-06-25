@@ -16,9 +16,20 @@ This tutorial was written for a Women Who Code Sydney workshop on Cypress
 yarn install
 ```
 
+or 
+
+```
+npm install
+```
+
 ### Run the app
 
 This will run the app and create the database
+
+
+```
+npm start
+```
 
 ```
 node index.js

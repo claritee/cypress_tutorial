@@ -1,1 +1,5 @@
 node_modules
+store.sqlite
+yarn.lock
+cypress/videos
+cypress/screenshots
