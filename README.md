@@ -26,6 +26,11 @@ npm install
 
 This will run the app and create the database
 
+
+```
+npm start
+```
+
 ```
 node index.js
 ```
